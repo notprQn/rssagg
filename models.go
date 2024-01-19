@@ -12,6 +12,16 @@ type User struct {
 	CreatedAt time.Time `json:"createdAt"`
 	UpdatedAt time.Time `json:"updatedAt"`
 	Name      string    `json:"name"`
+	APIKey    string    `json:"api_key"`
+}
+
+type Feed struct {
+	ID        uuid.UUID `json:"id"`
+	CreatedAt time.Time `json:"createdAt"`
+	UpdatedAt time.Time `json:"updatedAt"`
+	Name      string    `json:"name"`
+	Url       string    `json:"url"`
+	UserID    uuid.UUID `json:"userId"`
 }
 
 func dataBaseUserToUser(DbUser database.User) User {
@@ -20,5 +30,17 @@ func dataBaseUserToUser(DbUser database.User) User {
 		CreatedAt: DbUser.CreatedAt,
 		UpdatedAt: DbUser.UpdatedAt,
 		Name:      DbUser.Name,
+		APIKey:    DbUser.ApiKey,
+	}
+}
+
+func dataBaseFeedtoFeed(DbFeed database.Feed) Feed {
+	return Feed{
+		ID:        DbFeed.ID,
+		CreatedAt: DbFeed.CreatedAt,
+		UpdatedAt: DbFeed.UpdatedAt,
+		Name:      DbFeed.Name,
+		Url:       DbFeed.Url,
+		UserID:    DbFeed.UserID,
 	}
 }
