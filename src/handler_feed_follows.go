@@ -22,7 +22,7 @@ func (cfg *apiConfig) handlerFeedFollowsGet(w http.ResponseWriter, r *http.Reque
 
 func (cfg *apiConfig) handlerFeedFollowCreate(w http.ResponseWriter, r *http.Request, user database.User) {
 	type parameters struct {
-		FeedID uuid.UUID
+		FeedID uuid.UUID `json:"feed_id"`
 	}
 	decoder := json.NewDecoder(r.Body)
 	params := parameters{}
@@ -44,7 +44,7 @@ func (cfg *apiConfig) handlerFeedFollowCreate(w http.ResponseWriter, r *http.Req
 		return
 	}
 
-	respondWithJSON(w, http.StatusOK, databaseFeedFollowToFeedFollow(feedFollow))
+	respondWithJSON(w, http.StatusCreated, databaseFeedFollowToFeedFollow(feedFollow))
 }
 
 func (cfg *apiConfig) handlerFeedFollowDelete(w http.ResponseWriter, r *http.Request, user database.User) {
@@ -60,7 +60,7 @@ func (cfg *apiConfig) handlerFeedFollowDelete(w http.ResponseWriter, r *http.Req
 		ID:     feedFollowID,
 	})
 	if err != nil {
-		respondWithError(w, http.StatusInternalServerError, "Couldn't create feed follow")
+		respondWithError(w, http.StatusInternalServerError, "Couldn't delete feed follow")
 		return
 	}
 
