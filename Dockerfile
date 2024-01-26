@@ -11,10 +11,10 @@ COPY . /app
 RUN go mod download
 
 # Build the Go app
-RUN go build && posts
+RUN go build -o posts
 
 # Expose port 8080 for incoming traffic
 EXPOSE 8080
 
 # Define the command to run the app when the container starts
-CMD ["/app/main"]
+CMD ["./posts"]
