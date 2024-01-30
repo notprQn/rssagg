@@ -35,11 +35,7 @@ func (cfg *apiConfig) handlerFeedCreate(w http.ResponseWriter, r *http.Request, 
 		return
 	}
 
-	respondWithJSON(w, http.StatusOK, struct {
-		feed Feed
-	}{
-		feed: databaseFeedToFeed(feed),
-	})
+	respondWithJSON(w, http.StatusOK, databaseFeedToFeed(feed))
 }
 
 func (cfg *apiConfig) handlerGetFeeds(w http.ResponseWriter, r *http.Request) {

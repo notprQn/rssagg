@@ -25,6 +25,8 @@ This document provides an overview of the RESTful API implemented in the provide
 - **Create User**
   - `POST /v1/users`
   - Creates a new user.
+  - Parametes:
+    `name (string): User name.`
 
 - **Get Users**
   - `GET /v1/users`
@@ -35,6 +37,9 @@ This document provides an overview of the RESTful API implemented in the provide
 - **Create Feed**
   - `POST /v1/feeds`
   - Creates a new feed. Requires authentication.
+  - Parametes:
+    `name (string): User name.`
+    `url (string): website url.`
 
 - **Get Feeds**
   - `GET /v1/feeds`
@@ -45,6 +50,8 @@ This document provides an overview of the RESTful API implemented in the provide
 - **Get Feed Follows**
   - `GET /v1/feed_follows`
   - Retrieves information about feed follows. Requires authentication.
+  - Parametes:
+    `feed_id (uuid): feed id.`
 
 - **Create Feed Follow**
   - `POST /v1/feed_follows`

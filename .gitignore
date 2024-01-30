@@ -1,5 +1,4 @@
 posts
 .env
-Dockerfile
-vendor
-railway_connection
+./vendor
+./railway_connection
