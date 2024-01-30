@@ -10,6 +10,9 @@ class User(models.Model):
     name = models.TextField()
     api_key = models.CharField(max_length=64, unique=True, default='')
 
+    class Meta:
+        db_table = "User"
+
     def save(self, *args, **kwargs):
         self.updated_at = timezone.now()
         return super().save(*args, **kwargs)
@@ -24,6 +27,9 @@ class Feed(models.Model):
 
     user = models.ForeignKey('User', on_delete=models.CASCADE)
 
+    class Meta:
+        db_table = "Feed"
+
     def save(self, *args, **kwargs):
         self.updated_at = timezone.now()
         return super().save(*args, **kwargs)
@@ -37,6 +43,9 @@ class Post(models.Model):
     description = models.TextField(blank=True, null=True)
     published_at = models.DateTimeField(blank=True, null=True)
     feed = models.ForeignKey('Feed', on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = "Post"
 
     def save(self, *args, **kwargs):
         self.updated_at = timezone.now()

@@ -1,2 +1,5 @@
-rssagg
+posts
 .env
+Dockerfile
+vendor
+railway_connection
