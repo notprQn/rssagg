@@ -50,4 +50,20 @@ class Post(models.Model):
     def save(self, *args, **kwargs):
         self.updated_at = timezone.now()
         return super().save(*args, **kwargs)
+    
+class FeedFollow(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    created_at = models.DateTimeField(default=timezone.now, editable=False)
+    updated_at = models.DateTimeField(default=timezone.now)
+    user = models.ForeignKey('User', on_delete=models.CASCADE)
+    feed = models.ForeignKey('Feed', on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ('user', 'feed')
+        db_table = "feed_follows"
+
+
+    def save(self, *args, **kwargs):
+        self.updated_at = timezone.now()
+        return super().save(*args, **kwargs)
 

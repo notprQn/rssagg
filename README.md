@@ -58,7 +58,7 @@ This document provides an overview of the RESTful API implemented in the provide
   - Creates a new feed follow. Requires authentication.
 
 - **Delete Feed Follow**
-  - `DELETE /v1/feed_follows/{feedFollowID}`
+  - `DELETE /v1/feed_follows/{feedFollowID}` 
   - Deletes a feed follow by ID. Requires authentication.
 
 ### Posts
