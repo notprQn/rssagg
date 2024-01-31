@@ -24,7 +24,7 @@ This document provides an overview of the RESTful API implemented in the provide
 
 - **Create User**
   - `POST /v1/users`
-  - Creates a new user.
+  - Creates a new user (Start using API here).
   - Parametes:
     `name (string): User name.`
 
