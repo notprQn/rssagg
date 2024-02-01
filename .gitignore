@@ -1,4 +1,4 @@
 posts
 .env
-./vendor
-./railway_connection
+vendor
+railway_connection
