@@ -2,9 +2,16 @@
 
 This document provides an overview of the RESTful API implemented in the provided Go code. The API is designed to manage users, feeds, and posts, with additional functionality for handling feed follows.
 
+# What was used?
+- Golang
+- Python (migrations)
+- Postgres
+- SQL
+
 ## Table of Contents
 
 - [API Link](#api-link)
+- [Run locally](#run-locally)
 - [Endpoints](#endpoints)
     - [Users](#users)
     - [Feeds](#feeds)
@@ -17,6 +24,14 @@ This document provides an overview of the RESTful API implemented in the provide
 ## API Link
 
 [rssagg-production.up.railway.app](https://rssagg-production.up.railway.app)
+
+## Run locally
+- Install the golnag language in your machine
+- Clone this project using "git clone [project link]"
+- Run "go mod download" to download dependencies
+- Run "go build && ./posts" to run project
+- # Your ready to use the API locally now!
+
 
 ## Endpoints
 
