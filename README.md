@@ -6,7 +6,7 @@ This document provides an overview of the RESTful API implemented in the provide
 - Golang
 - Python (migrations)
 - Postgres
-- SQL
+- Docker
 
 ## Table of Contents
 
