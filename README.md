@@ -30,7 +30,7 @@ This document provides an overview of the RESTful API implemented in the provide
 - Clone this project using "git clone [project link]"
 - Run "go mod download" to download dependencies
 - Run "go build && ./posts" to run project
-- # Your ready to use the API locally now!
+- Your ready to use the API locally now!
 
 
 ## Endpoints
